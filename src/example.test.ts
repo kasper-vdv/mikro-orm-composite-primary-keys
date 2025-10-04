@@ -66,6 +66,15 @@ class UserProfileEntity {
 class AuthUserRoleEntity {
   [PrimaryKeyProp]?: ['userProfile', 'role'];
 
+  // I have the tenant many to one located here, causing the issue
+
+  // @ManyToOne({
+  //   entity: () => TenantEntity,
+  //   fieldName: 'tenant_id',
+  //   primary: true,
+  // })
+  // tenant!: Ref<TenantEntity>;
+
   @ManyToOne({
     entity: () => UserProfileEntity,
     primary: true,
